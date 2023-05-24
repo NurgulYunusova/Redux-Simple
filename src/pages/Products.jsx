@@ -18,13 +18,17 @@ function Products() {
     dispatch({ type: "ADD", payload: item });
   };
 
+  const handleAdd = (item) => {
+    dispatch(addItem(item));
+  };
+
   return (
     <>
       <ul>
         {data &&
           data.map((item) => (
             <>
-              <li onClick={() => add(item)} style={{ cursor: "pointer" }}>
+              <li onClick={() => handleAdd(item)} style={{ cursor: "pointer" }}>
                 {item.id} - {item.name}
               </li>
             </>
